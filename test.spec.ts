@@ -114,6 +114,7 @@ test("Declined Credit Card Payment", async ({ page }) => {
   await page.getByRole('button', { name: 'pay now' }).click();
   await page.pause();
   await page.waitForTimeout(2000)
+  await expect(page.getByRole('button', { name: 'pay now' })).toBeVisible();
 
 
   // 7. Validate expected error message for credit card payment
